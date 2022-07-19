@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">  
+  <link rel="stylesheet" href="form.css">
+</head>
+<body id="signup">
+  <section id="loader">
+    </section>
+  <article class="register">    
+    <h1>Registration</h1>
+    <section>
+      <form target="_blank" id="form">
+        <input type="text"                              placeholder="Name">
+        <input type="email" placeholder="abc@gmail.com">
+        <input type="text"                              placeholder="Username">
+        <section id="gender">
+          <!-- <label>Gender:</label>
+          <select>
+            <option>Male</option>
+            <option>Female</option>
+          </select> -->
+          
+          <legend>Gender:</legend>
+          <input id="male" type="radio" name="gender" value="Male" checked>
+        <label for="male">Male</label>
+    
+    <input id="female" type="radio" name="gender" value="Female" >  
+     <label for="female">Female</label>
+        </section>
+        <input type="number" placeholder="+234">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+        <input type="submit" value="Register">   
+      </form>
+      <section id="orlogin">
+        <span>Or</span>
+        <a href="./login.html">Login</a>
+      </section>
+    </section>
+    
+    <footer>
+      <i class="fa fa-home-alt"></i>
+      <i class="fa fa-trash"></i>
+      <i class="fa fa-search-plus"></i>
+      <i class="fa fa-male"></i>
+    </footer>
+  </article>
+  <script>
+   function display(){document.getElementById("loader").style.display = "none"; document.querySelector(".register").style.display = "block";}
+   setTimeout (display, 4000);
+ </script> 
+</body>
+</html>
