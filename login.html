@@ -6,13 +6,18 @@
   <title>Login</title>
   <link rel="stylesheet" href="form.css">
 </head>
-<body id="signup">
-  <article class="login">
+<body>
+  <section class="loader">
+    </section>
+    
+  <article id="login">
     <h1>Login</h1>
     <section>
-      <form target="#" id="form">
-        <input type="email" placeholder="abc@gmail.com">
-        <input type="password" placeholder="Password">
+      <form target="_blank" method="post" id="form">
+         <input type="email" placeholder="abc@gmail.com" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        
+        <input type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        
         <input type="submit" value="Login">            
       </form>
       <section id="orsignup">
@@ -22,3 +27,9 @@
       </section>
     </section>
    </article>
+   <script>
+   function display(){document.querySelector(".loader").style.display = "none"; document.getElementById("login").style.display = "block";}
+   setTimeout (display, 2000);
+ </script> 
+</body>
+</html>

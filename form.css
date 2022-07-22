@@ -3,15 +3,14 @@
 }
 
 body {
-  height: 100%;
-  font-size: 165%;
+  font-size: 170%;
   padding-bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  background-color: #005108;
+  height: 100vh;
 }
     
-#loader {
+.loader {
   width: 3.3em;
   height: 3.3em;
   border-width: 0.4rem;
@@ -25,23 +24,23 @@ body {
   margin-left: -3rem;
   animation: loader 1.5s linear infinite alternate;
 }
- 
-#signup {
-  background-color: #005108;
-}
    
-.register {
+#register, #reset, #login {
   position: relative;
   animation: main 2s ease;
   display: none; 
 }
 
+#login {
+  animation: login 2s ease;
+}
+
+#reset {
+  animation: reset 2s ease;
+}
+
 
 /* Main Registration form */
-
-article{
-  height: 100%;
-}
 
 h1 {
   color: whitesmoke;
@@ -53,14 +52,15 @@ h1 {
   padding: 0;
   margin: auto;
 }
-input, #gender {
+input, fieldset, select {
   width: 100%;
   border: 0.1em solid #f5e855;
   border-radius: 0.3em;
 }
 
-input{
+input, select {
   height: 3em;
+  font-size: 0.9rem;
   color: gainsboro;
   background-color: transparent;
   padding-left: 1em;
@@ -72,17 +72,20 @@ input::placeholder {
   color: #f5e855;
 }
 
-#gender {
+fieldset {
+  height: 3.7em;
   color: #f5e855;
-  /*display: flex;
-  align-items: center;
-  justify-content: start;*/
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding-left: 0.3em;
+  margin-bottom: 0.5em;
 }
 
-input[type="radio"] {
+input[type="radio"], label{
   width: auto;
-  margin: 0;
+  margin-top: -0.8em;
   padding: 0;
+  vertical-align: text-top;
 }
 
 input[type="radio"]:hover {
@@ -98,15 +101,9 @@ input[type="submit"] {
   border-radius: 2em;
 }
 
-input:focus {
+input:focus, fieldset:hover, select:focus {
  border: none;
  outline: 0.1em solid gainsboro;
-}
-
-footer {
-  width: 100%;
-  margin: 10rem 0 0 0;
-  text-align: center;
 }
 
 i {
@@ -121,12 +118,17 @@ i {
 #orlogin, #orsignup {
   color: gainsboro;
   font-size: 1rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+}
+
+#orlogin a {
+  margin-bottom: 4rem;
 }
 
 a {
@@ -152,64 +154,147 @@ a {
   background-color: ghostwhite;
 }
 
-small{
-  font-weight: 200;
+#head p {
+  font-size: 0.9rem;
+  padding-left: 0.4rem;
+  margin-top: -0.7rem;
+  margin-bottom: -0.5rem;
+  display: inline;
 }
 
-p {
-  font-weight: 900;
+#head p span {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-#balance {
-  height: 7em;
+#balance, #upgrade, #transaction {
+  height: auto;
   width: 95%;
   color: white;
   background-color: #005108;
   text-align: center;
-  border: 0.1em solid transparent;
   border-radius: 0.6em;
   padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
   margin: auto;
 }
 
-#balance_bottom section {
-  display: block;
+#balance h6 {
+  width: 8.8rem;
   font-size: 1rem;
-  padding: 1rem;
-  margin-right: 0.5rem; 
+  font-weight: 300;
+  padding: 0;
+  margin-top: -0.4rem;
+  margin-bottom: -0.5rem;
+  margin: auto;
+  text-align: center;
 }
 
-#balance_bottom section i {
-  padding: 1rem;
-  margin-bottom: 0;
+#balance p {
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0.6rem;
 }
 
-#balance_bottom section label {
-  padding: 1rem;
-  margin-top: 0;
+#balance p:first-child {
+  color: #f7f7f7;
+  float: right;
+  font-size: 0.9rem;
+  font-weight: 200; 
+  margin-top: -1.5rem;
+  margin-right: -1.8rem;
+  padding-right: 0.5rem;
 }
 
+#balance p i {
+  font-size: 1rem;
+}
 
-footer #homepage {
+#balance_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.3rem;
+}
+
+#balance_content span {
+  font-size: 1rem;
+  margin-right: 0.8rem;
+  margin-left: 0.8rem;
+} 
+
+#balance_content span:nth-child(2), #balance_content span:nth-child(3) {
+  color: grey;
+}
+
+#upgrade {
+  height: auto;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  margin-top: 1rem;
+  text-align: left;
+  color: ;
+  background-color: ;
+}
+  
+#upgrade p {
+  display: flex;
+  justify-content: space-between;
+}
+
+#upgrade p span:nth-child(2), #upgrade p span:nth-child(3), #upgrade p span:nth-child(4) {
+  text-align: right;
+}
+
+#transaction {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin-bottom: 1.1rem;
+  margin-top: 0.4rem;
+  padding-left: 0.5rem;
+  color: black;
+  background-color: beige;
+}
+
+#date{
+  font-size: 0.8rem;
+  width: 100%;
+  display: block;
+  height: 1.5rem;
+  font-weight: 200;
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  background-color: #dcdcdc;
+}
+
+.transaction_details {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#homepage footer {
   height: 2em;
   width: 100%;
-  color: white;
+  margin-top: auto;
+  color: gray;
   border-top: 0.1em solid #c5c5c5;
-  position: absolute;
-  bottom: 0;
-  padding: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+}
+ 
+#homepage footer span  {
+  margin-right: 0.5rem;
+  margin-left: 1rem;
 }
 
-footer small { 
-  color: white;  
-  font-size: 0.5em;
-  padding: em;
-  margin: 0;
+#homepage footer span:first-child {
+  color: black;
 }
+
 
 /* Form loader */
 @keyframes loader {
@@ -224,10 +309,26 @@ footer small {
 @keyframes main {
     from {
       left: 100%;
-      bottom: 100%;
     }
     to {
       left: 0%;
+    }
+}
+
+@keyframes login {
+    from {
+      bottom: 100%;
+    }
+    to {
       bottom: 0%;
+    }
+}
+
+@keyframes reset {
+    from {
+      right: 100%;
+    }
+    to {
+      right: 0%;
     }
 }
