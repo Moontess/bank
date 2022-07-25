@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+
+/********** ALL LOADERS ***********/
 body {
   font-size: 170%;
   padding-bottom: 0;
@@ -9,7 +11,7 @@ body {
   background-color: #005108;
   height: 100vh;
 }
-    
+   
 .loader {
   width: 3.3em;
   height: 3.3em;
@@ -25,7 +27,7 @@ body {
   animation: loader 1.5s linear infinite alternate;
 }
    
-#register, #reset, #login {
+#index, #register, #reset, #login {
   position: relative;
   animation: main 2s ease;
   display: none; 
@@ -40,7 +42,64 @@ body {
 }
 
 
-/* Main Registration form */
+/********** PREVIEW PAGE ***********/
+
+#index {  
+  font-weight: bolder;
+  top: 10%;
+  animation: index 2s ease;
+  margin-bottom: 1em;
+}
+
+#others {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#others p {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 2.5rem auto;
+}
+ 
+#others a {
+  width: 8rem !important;
+  height: 3rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+
+/********** BANK NAME ***********/
+
+#bankname {
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+#bankname section {
+  border: 0.2rem solid whitesmoke;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-radius: 2.5rem;
+  padding-bottom: rem;
+}
+
+#bankname section i {
+  margin-right: -2.3rem;
+  padding-bottom: -0.5rem;
+  
+}
+
+#bankname section i:last-child {
+  margin-left: -0.4rem;
+}
+
+
+/****** REGISTRATION FORM *******/
 
 h1 {
   color: whitesmoke;
@@ -61,15 +120,17 @@ input, fieldset, select {
 input, select {
   height: 3em;
   font-size: 0.9rem;
-  color: gainsboro;
+  color: #f8f8f8;
+  letter-spacing: 0.1rem;
   background-color: transparent;
   padding-left: 1em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
 }
 
 input::placeholder {
   color: #f5e855;
+  letter-spacing: 0.05rem;
 }
 
 fieldset {
@@ -102,8 +163,14 @@ input[type="submit"] {
 }
 
 input:focus, fieldset:hover, select:focus {
- border: none;
- outline: 0.1em solid gainsboro;
+  border: none;
+  outline: 0.1em solid gainsboro;
+  box-shadow: 0.1rem 0.1rem 0.9rem 0.05rem gainsboro;
+}
+
+input[type="submit"]:focus input:invalid {
+  border: 0.2rem solid red;
+  border
 }
 
 i {
@@ -114,7 +181,9 @@ i {
   margin: 0 0.5rem;
 }
 
-/*Login and Reset section*/
+
+/****** LOGIN & RESET PASSWORD ******/
+
 #orlogin, #orsignup {
   color: gainsboro;
   font-size: 1rem;
@@ -148,7 +217,7 @@ a {
 }
 
 
-/*homepage section*/
+/*********** HOMEPAGE ***********/
 
 #homepage {
   background-color: ghostwhite;
@@ -296,7 +365,8 @@ a {
 }
 
 
-/* Form loader */
+/*********** ALL LOADERS ***********/
+
 @keyframes loader {
       from {
         transform: rotate(0deg);
@@ -305,6 +375,15 @@ a {
         transform: rotate(360deg);
       }
     }
+
+@keyframes index {
+    from {
+      top: 100%;
+    }
+    to {
+      top: 0%;
+    }
+}
     
 @keyframes main {
     from {

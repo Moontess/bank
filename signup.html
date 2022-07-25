@@ -10,17 +10,26 @@
 <body>
   <section class="loader">
     </section>
+    
+    <section id="bankname">
+      <section>
+        <i class="fa-brands fa-maxcdn"></i>
+        <i class="fa-brands fa-tumblr"></i>   
+      </section>
+      <span>Bank</span>
+   </section>
+    
   <article id="register">    
-    <h1 title="dhdhdhdjd">Registration</h1>
+    <h1>Registration</h1>
     <section>
       
       <form target="#" method="POST" id="form">
         
-        <input type="text"                            placeholder="Full Name" pattern="^[A-Za-z][A-Za-z]$" required>
+        <input type="text"                            placeholder="Full Name" pattern="^[A-Za-z]{3,}\s[A-Za-z]{3,}||[A-Za-z]{3,}\s[A-Za-z]{3,}\s[A-Za-z]{3,}$" required>
         
         <input type="email" placeholder="abc@gmail.com" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         
-        <input type="text"                           placeholder="Username" pattern="[A-Za-z]{3,}" required>
+        <input type="text"                           placeholder="Username" pattern="^[A-Za-z]{3,}$" required>
           
         <fieldset>
           <legend>Gender:</legend>
@@ -32,17 +41,17 @@
         
         <input type="date" min="1970-12-31" max="2004-12-31" value="1990-12-31" required>
           
-        <input type="tel" placeholder="080 113 11 703" pattern="[0-9]{11,11}" required>
+        <input type="tel" placeholder="+234 80 113 11 703" pattern="^\+234[0-9]{10}$" required>
         
-        <input type="text" placeholder="City" pattern="[A-Za-z]" required>
+        <input type="text" placeholder="City" pattern="^[A-Za-z]{3,}$" required>
         
-        <input type="text" placeholder="State" pattern="[A-Za-z]" required>
+        <input type="text" placeholder="State" pattern="^[A-Za-z]{3,}$" required>
        
-        <input type="number" placeholder="Postal code" min="5" max="5">
+        <input type="number" placeholder="Postal code" min-length="5" max-length="5">
         
-        <input type="text" placeholder="Nationality"  pattern="[A-Za-z]" required>
+        <input type="text" placeholder="Nationality"  pattern="^[A-Za-z]{3,}$" required>
         
-        <select required>
+        <select name="lga" required>
         <option selected disabled>Local Government Area</option>
         <option>Asa</option>
         <option>Ifelodun</option>
